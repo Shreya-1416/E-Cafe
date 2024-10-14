@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        select, input[type="checkbox"], input[type="number"], input[type="file"], input[type="submit"] {
+            margin-bottom: 15px;
+        }
+        .notification {
+            margin-top: 20px;
+            display: none;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Select Print Options</h1>
+    <form id="printOptionsForm">
+        <label for="printType">Select Print Type:</label>
+        <select id="printType" required>
+            <option value="" disabled selected>Select your option</option>
+            <option value="color">Color</option>
+            <option value="black_white">Black & White</option>
+        </select>
+
+        <label for="paperSize">Select Paper Size:</label>
+        <select id="paperSize" required>
+            <option value="" disabled selected>Select your option</option>
+            <option value="a4">A4</option>
+            <option value="a3">A3</option>
+            <option value="letter">Letter</option>
+        </select>
+
+        <label for="quantity">Enter Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+        <label for="delivery">
+            <input type="checkbox" id="delivery" name="delivery">
+            Require Delivery?
+        </label>
+
+        <label for="fileUpload">Upload File to Print:</label>
+        <input type="file" id="fileUpload" accept=".pdf,.doc,.docx,.jpg,.png" required>
+
+        <input type="submit" value="Submit Print Options">
+    </form>
+
+    <div id="notification" class="notification">
+        Your print options have been saved! The document will now print.
+    </div>
+
+    <script>
+        document.getElementById("printOptionsForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get the uploaded file
+            const fileInput = document.getElementById("fileUpload");
+            const file = fileInput.files[0];
+
+            // Check if a file is selected
+            if (file) {
+                // Here you can send the file to the server if needed
+                console.log("File selected:", file.name);
+                
+                // Show notification
+                document.getElementById("notification").style.display = "block";
+
+                // Create a URL for the file and initiate print
+                const fileURL = URL.createObjectURL(file);
+                const printWindow = window.open(fileURL);
+                printWindow.onload = function() {
+                    printWindow.print();
+                };
+
+                // Revoke the object URL after print to free up resources
+                printWindow.onafterprint = function() {
+                    URL.revokeObjectURL(fileURL);
+                    printWindow.close();
+                };
+            }
+        });
+    </script>
+
+</body>
+</html>

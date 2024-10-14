@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Cafe: Form Filling Service</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="bg-dark text-white text-center py-4">
+    <button onclick="history.back()" class="btn btn-light position-absolute" style="top: 10px; left: 10px;">Back</button>
+    <h1>Form Filling Service</h1>
+    <p>Please fill in the required details below.</p>
+  </header>
+
+  <!-- Form Section -->
+  <section id="form-filling" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Fill Out Your Form</h2>
+
+      <!-- Instructions Section -->
+      <div class="mb-4">
+        <h5>How to Use?</h5>
+        <ul>
+          <li>Click on the name of the form you want to fill.</li>
+          <li>Fill that particular form.</li>
+          <li>Download it from their site.</li>
+          <li>If you want a printout of it, just go to the home page and click on print orders page
+            and then upload your pdf, image or any file.
+          </li>
+          <li>Ask for print and then Order it.</li>
+        </ul>
+      </div>
+
+      <!-- Government Forms Links Section -->
+      <div class="mt-5">
+        <h3 class="text-center">Links to Government Forms</h3>
+        <p class="text-center">You can access the following government forms:</p>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <a href="https://passportindia.gov.in/" target="_blank" class="btn btn-link">Passport Application</a>
+          </li>
+          <li class="list-group-item">
+            <a href="https://parivahan.gov.in/parivahan/" target="_blank" class="btn btn-link">Driving License Application</a>
+          </li>
+          <li class="list-group-item">
+            <a href="https://uidai.gov.in/" target="_blank" class="btn btn-link">Aadhaar Card Application</a>
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" class="btn btn-link">PAN Card Application</a>
+          </li>
+          <li class="list-group-item">
+            <a href="https://jeemain.nta.nic.in/" target="_blank" class="btn btn-link">JEE Main Application</a>
+          </li>
+          <li class="list-group-item">
+            <a href="https://jeeadv.ac.in/" target="_blank" class="btn btn-link">JEE Advanced Application</a>
+          </li>
+          <li class="list-group-item">
+            <a href="https://neet.nta.nic.in/" target="_blank" class="btn btn-link">NEET Application</a>
+          </li>
+          <li class="list-group-item">
+            <a href="https://scholarships.gov.in/" target="_blank" class="btn btn-link">India Legal Scholarships</a>
+          </li>
+          <li class="list-group-item">
+            <a href="https://scholarships.up.gov.in/" target="_blank" class="btn btn-link">UP Scholarships</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Legal Forms of Banks Section -->
+      <div class="mt-5">
+        <h3 class="text-center">Legal Forms of Banks</h3>
+        <p class="text-center">You can access the following legal forms:</p>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <a href="https://www.sbi.co.in/web/home" target="_blank" class="btn btn-link">State Bank of India</a>
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.bankofbaroda.in/" target="_blank" class="btn btn-link">Bank of Baroda</a>
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.unionbankofindia.co.in/" target="_blank" class="btn btn-link">Union Bank</a>
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.pnbindia.in/" target="_blank" class="btn btn-link">Punjab National Bank</a>
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.hdfcbank.com/" target="_blank" class="btn btn-link">HDFC</a>
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.policybazaar.com/" target="_blank" class="btn btn-link">Policybazaar Form</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS and Dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="form-script.js"></script> <!-- JavaScript to handle form submission -->
+
+  <!-- Print Function -->
+  <script>
+    function printForm() {
+      const formElement = document.getElementById('formFill') || document.getElementById('formFill2');
+      const printWindow = window.open('', '', 'height=400,width=600');
+      printWindow.document.write('<html><head><title>Print Form</title>');
+      printWindow.document.write('</head><body >');
+      printWindow.document.write(formElement.outerHTML);
+      printWindow.document.write('</body></html>');
+      printWindow.document.close();
+      printWindow.print();
+    }
+  </script>
+</body>
+</html>

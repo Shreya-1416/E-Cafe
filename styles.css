@@ -1,0 +1,94 @@
+/* Background for the entire site */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("C:\Users\gupta\Downloads\Untitled design.png"); /* Replace with your actual image URL */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    color: black;
+  }
+  
+  /* Custom styles for the header */
+  header {
+    background-color: black; /* Semi-transparent black background */
+    padding: 60px 0;
+  }
+  
+  header h1 {
+    font-size: 3rem;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+  }
+  
+  /* Services Section Styling */
+  section#services {
+    background-color: rgba(255, 255, 255, 0.8); /* White with transparency for content readability */
+    color: #333;
+    padding: 50px 0;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  .card-title {
+    color: #007bff;
+  }
+  
+  /* Footer Styling */
+  footer {
+    background-color: #343a40;
+    color: #ccc;
+  }
+  /* Custom styles for the form page */
+#form-filling {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 50px 0;
+  }
+  
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  form .form-group label {
+    font-weight: bold;
+  }
+  
+  form button {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+  }
+  
+  /* Ensuring visibility for the UploadCard text */
+.UploadCard__Info-sc-155yhmb-3, 
+.UploadCard__Title-sc-155yhmb-6, 
+.UploadCard__SubTitle-sc-155yhmb-7, 
+.UploadCard__InfoText-sc-155yhmb-0 {
+  color: #333; /* Darker color for better contrast */
+}
+
+.UploadCard__Button-sc-155yhmb-4 {
+  background-color: #007bff;
+  color: rgba(0, 0, 0, 0.948); /* Button text color */
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.UploadCard__Button-sc-155yhmb-4:hover {
+  background-color: #0056b3;
+}
+
+
+  
+  
